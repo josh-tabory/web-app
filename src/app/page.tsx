@@ -64,10 +64,10 @@ export default function Home() {
   const destinations = [
     { id: 1, title: 'Olympic', sub: 'Temperate Rainforest', img: '/assets/olympic.jpg', coord: '47.8021° N', elev: '7,962 ft' },
     { id: 2, title: 'Crater Lake', sub: 'Volcanic Caldera', img: '/assets/crater.jpg', coord: '42.8684° N', elev: '6,178 ft' },
-    { id: 3, title: 'Cannon Beach', sub: 'Rugged Coastline', img: '/assets/cannon.jpg', coord: '45.8918° N', elev: '0 ft' },
-    { id: 4, title: 'Mount Rainier', sub: 'Alpine', img: '/assets/rainier.jpg', coord: '46.8523° N', elev: '14,411 ft' },
-    { id: 5, title: 'North Cascades', sub: 'Glacial', img: '/assets/cascades.jpg', coord: '48.7718° N', elev: '9,220 ft' },
-    { id: 6, title: 'Seattle Skyline', sub: 'Urban', img: '/assets/seattle.jpg', coord: '47.6062° N', elev: '175 ft' },
+    { id: 3, title: 'Oregon Coast', sub: 'Rugged Coastline', img: '/assets/cannon.jpg', coord: '45.8918° N', elev: '0 ft' },
+    { id: 4, title: 'North Cascades', sub: 'Alpine Tundra', img: '/assets/cascades.jpg', coord: '48.7718° N', elev: '9,220 ft' },
+    { id: 5, title: 'Mount Rainier', sub: 'Alpine', img: '/assets/rainier.jpg', coord: '46.8523° N', elev: '14,411 ft' },
+    { id: 6, title: 'Seattle', sub: 'Urban', img: '/assets/seattle.jpg', coord: '47.6062° N', elev: '175 ft' },
   ];
 
   const scrollCarousel = (dir: 'left' | 'right') => {
@@ -169,7 +169,7 @@ export default function Home() {
             <motion.p
               animate={{ opacity: [0.5, 1, 0.5] }}
               transition={{ repeat: Infinity, duration: 2 }}
-              className="text-[10px] text-zinc-500 uppercase tracking-[0.4em] font-mono"
+              className="text-[12px] text-zinc-500 uppercase tracking-[0.4em] font-mono"
             >
               Synchronizing Archive
             </motion.p>
@@ -201,7 +201,7 @@ export default function Home() {
               {/* Technical Data Overlay (For the Technical Planner) */}
               <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80 p-12 flex flex-col justify-between">
                 <div className="flex justify-between items-start">
-                  <div className="font-mono text-[10px] space-y-1 tracking-widest opacity-80">
+                  <div className="font-mono text-[14px] space-y-1 tracking-widest opacity-80">
                     <p className="flex items-center gap-2"><Navigation className="w-3 h-3 text-nl-teal" /> GPS: {selectedId.coord}</p>
                     <p className="flex items-center gap-2"><Wind className="w-3 h-3 text-nl-teal" /> ELEV: {selectedId.elev}</p>
                   </div>
@@ -296,7 +296,7 @@ function Card({ item, index, carouselRef, setSelectedId, dragDistance, isLoaded 
       <div className="flex justify-between items-start">
         <div>
           <h3 className="text-lg font-bold uppercase tracking-tight">{item.title}</h3>
-          <p className="text-[10px] text-zinc-500 uppercase tracking-widest mt-1 font-mono">{item.sub}</p>
+          <p className="text-[14px] text-zinc-500 uppercase tracking-widest mt-1 font-mono">{item.sub}</p>
         </div>
         <p className="font-mono text-[14px] text-nl-teal opacity-0 group-hover:opacity-100 transition-opacity">{item.coord}</p>
       </div>
