@@ -1,26 +1,38 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Northern Latitude Luxury Dark Palette */
+  --background: #0A0A0A;
+  --foreground: #FFFFFF;
+  --nl-teal: #258C84;
+  --nl-charcoal: #1C1E20;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-nl-teal: var(--nl-teal);
+  --color-nl-charcoal: var(--nl-charcoal);
+
+  /* Setting up the professional font pairings */
+  --font-sans: "Inter Tight", ui-sans-serif, system-ui;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Force dark mode behavior regardless of system settings */
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth scrolling for the technical feel */
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: rgba(37, 140, 132, 0.3);
+  /* Transparent Teal */
 }
