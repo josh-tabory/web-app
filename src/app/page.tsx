@@ -23,6 +23,9 @@ export default function Home() {
   const closeOverlay = () => {
     setIsClosing(true);
     setTimeout(() => {
+      if (carouselRef.current) {
+        carouselRef.current.scrollLeft = 0;
+      }
       setSelectedId(null);
       setIsClosing(false);
     }, 20);
@@ -248,7 +251,7 @@ function Card({ item, index, carouselRef, setSelectedId, dragDistance, isLoaded 
     offset: ["start end", "end start"]
   });
 
-  const x = useTransform(scrollXProgress, [0, 1], ["20%", "-20%"]);
+  const x = useTransform(scrollXProgress, [0, 1], ["10%", "-10%"]);
 
   return (
     <motion.div
@@ -279,9 +282,9 @@ function Card({ item, index, carouselRef, setSelectedId, dragDistance, isLoaded 
           style={{
             backgroundImage: `url(${item.img})`,
             x,
-            left: "-20%",
-            right: "-20%",
-            width: "140%"
+            left: "-15%",
+            right: "-15%",
+            width: "130%"
           }}
         />
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-700 pointer-events-none" />
