@@ -301,7 +301,7 @@ function Card({ item, index, carouselRef, setSelectedId, dragDistance, isLoaded 
           </div>
         </div>
         {/* Animated Bottom Border */}
-        <div className="absolute bottom-0 left-0 h-[2px] bg-nl-teal w-0 group-hover:w-full transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] z-10" />
+        <div className="absolute bottom-0 left-0 w-full h-[2px] bg-nl-teal origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out z-10" />
       </motion.div>
       <div className="flex justify-between items-start">
         <div>
